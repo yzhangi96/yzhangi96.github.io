@@ -1,15 +1,16 @@
-/* Google Sites–like, clean centered layout */
 :root{
   --text:#202124;
   --muted:#5f6368;
   --border:#e0e0e0;
   --bg:#ffffff;
   --link:#1a73e8;
-  --max: 760px;       /* Google Sites content column feel */
-  --nav-max: 1100px;  /* top bar width */
+
+  --page-max: 1100px;  /* overall width like Google Sites */
+  --sidebar: 260px;    /* left column width */
 }
 
 *{ box-sizing:border-box; }
+
 html,body{
   margin:0;
   padding:0;
@@ -28,137 +29,111 @@ a:hover{ text-decoration:underline; }
 }
 
 .topbar-inner{
-  max-width: var(--nav-max);
+  max-width: var(--page-max);
   margin: 0 auto;
   padding: 14px 20px;
   display:flex;
   align-items:center;
-  gap:24px;
 }
 
 .site-title{
-  font-size: 20px;
-  font-weight: 500;
-  color: var(--text);
-  white-space:nowrap;
+  font-size:20px;
+  font-weight:500;
+  color:var(--text);
 }
 
 .nav{
   margin-left:auto;
   display:flex;
   gap:22px;
-  align-items:center;
 }
 
 .nav-link{
-  color: var(--muted);
-  font-size: 14px;
-  font-weight: 500;
-  padding: 10px 2px;
-  border-bottom: 2px solid transparent;
+  font-size:14px;
+  font-weight:500;
+  color:var(--muted);
+  padding:10px 2px;
+  border-bottom:2px solid transparent;
 }
+.nav-link:hover{ text-decoration:none; color:var(--text); }
+.nav-link.active{ color:var(--text); border-bottom-color:var(--text); }
 
-.nav-link:hover{
-  text-decoration:none;
-  color: var(--text);
-}
-
-.nav-link.active{
-  color: var(--text);
-  border-bottom-color: var(--text); /* subtle underline like Sites */
-}
-
-/* Page container */
+/* Page */
 .page{
-  max-width: var(--max);
+  max-width: var(--page-max);
   margin: 0 auto;
-  padding: 22px 20px 70px;
+  padding: 26px 20px 70px;
 }
 
 .page-title{
-  font-size: 26px;
-  font-weight: 500;
-  margin: 6px 0 18px;
+  font-size:26px;
+  font-weight:500;
+  margin: 0 0 22px;
 }
 
-/* Google Sites "header block": centered stack */
-.profile{
+/* Two-column layout (sidebar + main content) */
+.layout{
+  display:grid;
+  grid-template-columns: var(--sidebar) 1fr;
+  gap: 40px;
+  align-items:flex-start;
+}
+
+/* Sidebar */
+.sidebar{
   display:flex;
   flex-direction:column;
   align-items:center;
   text-align:center;
-  gap:10px;
-  margin: 4px 0 22px;
 }
 
 .profile-photo{
-  width: 200px;
-  height: 200px;
-  border-radius: 9999px;  /* circle */
-  object-fit: cover;
-  border: 1px solid var(--border);
+  width:200px;
+  height:200px;
+  border-radius:9999px;
+  object-fit:cover;
+  border:1px solid var(--border);
 }
 
 .profile-name{
-  font-size: 22px;
-  font-weight: 500;
-  margin-top: 2px;
+  margin-top:12px;
+  font-size:22px;
+  font-weight:500;
 }
 
 .profile-email{
-  color: var(--muted);
-  font-size: 14px;
-  margin-top: -6px;
+  margin-top:4px;
+  font-size:14px;
+  color:var(--muted);
 }
 
-/* Social icons like small round buttons */
 .social{
+  margin-top:10px;
   display:flex;
-  justify-content:center;
   gap:10px;
-  margin-top: 2px;
 }
 
 .icon-btn{
-  width: 34px;
-  height: 34px;
-  border-radius: 9999px;
-  border: 1px solid var(--border);
-  display:inline-flex;
+  width:34px;
+  height:34px;
+  border-radius:9999px;
+  border:1px solid var(--border);
+  display:flex;
   align-items:center;
   justify-content:center;
   background:#fff;
 }
 
 .icon-btn svg{
-  width: 18px;
-  height: 18px;
-  fill: var(--muted);
+  width:18px;
+  height:18px;
+  fill:var(--muted);
 }
 
-.icon-btn:hover svg{
-  fill: var(--text);
-}
+.icon-btn:hover svg{ fill:var(--text); }
 
-/* Thin divider like Sites often uses */
-.divider{
-  border:0;
-  border-top:1px solid var(--border);
-  margin: 18px 0 18px;
-}
-
-/* Content typography */
+/* Main content styling */
 .content h2{
-  font-size: 20px;
-  font-weight: 500;
-  margin: 0 0 10px;
-}
-
-.content p{ margin: 0 0 12px; }
-
-/* Mobile */
-@media (max-width: 700px){
-  .topbar-inner{ padding: 12px 14px; }
-  .nav{ gap: 14px; }
-  .profile-photo{ width: 170px; height: 170px; }
-}
+  font-size:20px;
+  font-weight:500;
+  mar
