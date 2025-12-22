@@ -27,7 +27,13 @@ a:hover{ text-decoration:underline; }
   background:#fff;
   border-bottom:1px solid var(--border);
 }
-
+.hello{
+  font-size: 40px;        /* matches Google Sites hero scale */
+  font-weight: 500;
+  line-height: 1.15;
+  margin: 0 0 16px;
+  color: #1a73e8;         /* Google Sites blue */
+}
 .topbar-inner{
   max-width: var(--page-max);
   margin: 0 auto;
