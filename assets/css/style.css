@@ -71,14 +71,18 @@ a:hover{ text-decoration:underline; }
 }
 
 .nav-link{
-  font-size:14px;
-  font-weight:500;
-  color:var(--muted);
-  padding:10px 2px;
-  border-bottom:2px solid transparent;
+  font-size: 16.5px;      /* bigger tabs */
+  font-weight: 500;       /* Google Sites–like weight */
+  color: var(--muted);
+  padding: 12px 4px;      /* taller click area */
+  border-bottom: 2px solid transparent;
 }
 .nav-link:hover{ text-decoration:none; color:var(--text); }
-.nav-link.active{ color:var(--text); border-bottom-color:var(--text); }
+.nav-link.active{
+  color: var(--text);
+  font-weight: 600;
+  border-bottom-color: var(--text);
+}
 
 /* Page */
 .page{
@@ -110,11 +114,11 @@ a:hover{ text-decoration:underline; }
 }
 
 .profile-photo{
-  width:200px;
-  height:200px;
-  border-radius:9999px;
-  object-fit:cover;
-  border:1px solid var(--border);
+  width: 160px;
+  height: 160px;
+  border-radius: 9999px;
+  object-fit: cover;
+  border: 1px solid var(--border);
 }
 
 .profile-name{
