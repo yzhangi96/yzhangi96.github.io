@@ -28,7 +28,7 @@ a:hover{ text-decoration:underline; }
   border-bottom:1px solid var(--border);
 }
 .hello{
-  font-size: 40px;        /* matches Google Sites hero scale */
+  font-size: 60px;        /* matches Google Sites hero scale */
   font-weight: 500;
   line-height: 1.15;
   margin: 0 0 16px;
