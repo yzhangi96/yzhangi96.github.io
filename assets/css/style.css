@@ -32,14 +32,14 @@ a:hover{ text-decoration:underline; }
   font-weight: 500;
   line-height: 1.15;
   margin: 0 0 16px;
-  color: #1a73e8;         /* Google Sites blue */
+  color: rgba(34, 110, 147, 1);         /* Google Sites blue */
 }
 .content h2.hello{
   font-size: 40px;
   font-weight: 500;
   line-height: 1.15;
   margin: 0 0 16px;
-  color: #1a73e8;
+  color: rgba(34, 110, 147, 1);
 }
 .gs-bullets{
   margin: 6px 0 18px 18px;
