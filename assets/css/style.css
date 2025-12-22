@@ -34,6 +34,15 @@ a:hover{ text-decoration:underline; }
   margin: 0 0 16px;
   color: #1a73e8;         /* Google Sites blue */
 }
+.gs-bullets{
+  margin: 6px 0 18px 18px;
+  padding: 0;
+}
+
+.gs-bullets li{
+  margin: 4px 0;
+}
+
 .topbar-inner{
   max-width: var(--page-max);
   margin: 0 auto;
