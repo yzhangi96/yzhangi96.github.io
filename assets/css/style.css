@@ -11,6 +11,15 @@
 
 *{ box-sizing:border-box; }
 
+.advisor-link{
+  color: rgba(34, 110, 147, 1);
+  font-weight: 500;
+}
+
+.advisor-link:hover{
+  text-decoration: underline;
+}
+
 html,body{
   margin:0;
   padding:0;
