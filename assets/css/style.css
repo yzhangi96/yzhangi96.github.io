@@ -1,0 +1,131 @@
+:root{
+  --bg:#fff;
+  --text:#202124;
+  --muted:#5f6368;
+  --border:#dadce0;
+  --link:#1a73e8;
+  --max: 980px;
+}
+
+*{ box-sizing:border-box; }
+html,body{
+  margin:0;
+  padding:0;
+  background:var(--bg);
+  color:var(--text);
+  font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,Helvetica,sans-serif;
+}
+
+a{ color:var(--link); text-decoration:none; }
+a:hover{ text-decoration:underline; }
+
+/* Top navigation bar */
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:#fff;
+  border-bottom:1px solid var(--border);
+}
+
+.topbar-inner{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+.site-title{
+  font-size:20px;
+  font-weight:600;
+  color:var(--text);
+  white-space:nowrap;
+}
+
+.nav{
+  margin-left:auto;
+  display:flex;
+  gap:18px;
+}
+
+.nav-link{
+  color:var(--muted);
+  padding:8px 0;
+  border-bottom:2px solid transparent;
+}
+
+.nav-link.active{
+  color:var(--text);
+  border-bottom-color:var(--text);
+}
+
+/* Page layout */
+.page{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:22px 18px 60px 18px;
+}
+
+.page-title{
+  font-size:28px;
+  font-weight:600;
+  margin:6px 0 18px 0;
+}
+
+/* Profile header block */
+.profile{
+  display:flex;
+  gap:18px;
+  align-items:center;
+  padding:10px 0;
+}
+
+.profile-photo{
+  width:160px;
+  height:160px;
+  border-radius:10px;
+  object-fit:cover;
+  border:1px solid var(--border);
+}
+
+.profile-name{
+  font-size:22px;
+  font-weight:600;
+}
+
+.profile-email{
+  color:var(--muted);
+  margin-bottom:10px;
+}
+
+.social{
+  display:flex;
+  gap:10px;
+}
+
+.social svg{
+  width:22px;
+  height:22px;
+  fill:var(--muted);
+}
+.social svg:hover{
+  fill:var(--text);
+}
+
+/* Content */
+.content h2{
+  font-size:22px;
+  margin-top:18px;
+}
+
+p{ margin:0 0 12px 0; }
+
+/* Mobile */
+@media (max-width:760px){
+  .profile{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
