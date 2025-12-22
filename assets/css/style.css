@@ -1,10 +1,12 @@
+/* Google Sites–like, clean centered layout */
 :root{
-  --bg:#fff;
   --text:#202124;
   --muted:#5f6368;
-  --border:#dadce0;
+  --border:#e0e0e0;
+  --bg:#ffffff;
   --link:#1a73e8;
-  --max: 980px;
+  --max: 760px;       /* Google Sites content column feel */
+  --nav-max: 1100px;  /* top bar width */
 }
 
 *{ box-sizing:border-box; }
@@ -13,119 +15,150 @@ html,body{
   padding:0;
   background:var(--bg);
   color:var(--text);
-  font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,Helvetica,sans-serif;
+  font: 16px/1.6 Roboto, Arial, Helvetica, sans-serif;
 }
 
 a{ color:var(--link); text-decoration:none; }
 a:hover{ text-decoration:underline; }
 
-/* Top navigation bar */
+/* Top bar */
 .topbar{
-  position:sticky;
-  top:0;
-  z-index:10;
   background:#fff;
   border-bottom:1px solid var(--border);
 }
 
 .topbar-inner{
-  max-width:var(--max);
-  margin:0 auto;
-  padding:14px 18px;
+  max-width: var(--nav-max);
+  margin: 0 auto;
+  padding: 14px 20px;
   display:flex;
   align-items:center;
-  gap:16px;
+  gap:24px;
 }
 
 .site-title{
-  font-size:20px;
-  font-weight:600;
-  color:var(--text);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text);
   white-space:nowrap;
 }
 
 .nav{
   margin-left:auto;
   display:flex;
-  gap:18px;
+  gap:22px;
+  align-items:center;
 }
 
 .nav-link{
-  color:var(--muted);
-  padding:8px 0;
-  border-bottom:2px solid transparent;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 2px;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover{
+  text-decoration:none;
+  color: var(--text);
 }
 
 .nav-link.active{
-  color:var(--text);
-  border-bottom-color:var(--text);
+  color: var(--text);
+  border-bottom-color: var(--text); /* subtle underline like Sites */
 }
 
-/* Page layout */
+/* Page container */
 .page{
-  max-width:var(--max);
-  margin:0 auto;
-  padding:22px 18px 60px 18px;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 22px 20px 70px;
 }
 
 .page-title{
-  font-size:28px;
-  font-weight:600;
-  margin:6px 0 18px 0;
+  font-size: 26px;
+  font-weight: 500;
+  margin: 6px 0 18px;
 }
 
-/* Profile header block */
+/* Google Sites "header block": centered stack */
 .profile{
   display:flex;
-  gap:18px;
+  flex-direction:column;
   align-items:center;
-  padding:10px 0;
+  text-align:center;
+  gap:10px;
+  margin: 4px 0 22px;
 }
 
 .profile-photo{
-  width:160px;
-  height:160px;
-  border-radius:10px;
-  object-fit:cover;
-  border:1px solid var(--border);
+  width: 200px;
+  height: 200px;
+  border-radius: 9999px;  /* circle */
+  object-fit: cover;
+  border: 1px solid var(--border);
 }
 
 .profile-name{
-  font-size:22px;
-  font-weight:600;
+  font-size: 22px;
+  font-weight: 500;
+  margin-top: 2px;
 }
 
 .profile-email{
-  color:var(--muted);
-  margin-bottom:10px;
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: -6px;
 }
 
+/* Social icons like small round buttons */
 .social{
   display:flex;
+  justify-content:center;
   gap:10px;
+  margin-top: 2px;
 }
 
-.social svg{
-  width:22px;
-  height:22px;
-  fill:var(--muted);
-}
-.social svg:hover{
-  fill:var(--text);
+.icon-btn{
+  width: 34px;
+  height: 34px;
+  border-radius: 9999px;
+  border: 1px solid var(--border);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:#fff;
 }
 
-/* Content */
+.icon-btn svg{
+  width: 18px;
+  height: 18px;
+  fill: var(--muted);
+}
+
+.icon-btn:hover svg{
+  fill: var(--text);
+}
+
+/* Thin divider like Sites often uses */
+.divider{
+  border:0;
+  border-top:1px solid var(--border);
+  margin: 18px 0 18px;
+}
+
+/* Content typography */
 .content h2{
-  font-size:22px;
-  margin-top:18px;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0 0 10px;
 }
 
-p{ margin:0 0 12px 0; }
+.content p{ margin: 0 0 12px; }
 
 /* Mobile */
-@media (max-width:760px){
-  .profile{
-    flex-direction:column;
-    align-items:flex-start;
-  }
+@media (max-width: 700px){
+  .topbar-inner{ padding: 12px 14px; }
+  .nav{ gap: 14px; }
+  .profile-photo{ width: 170px; height: 170px; }
 }
